@@ -1,0 +1,638 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-color: #0f1629;
+  --green: #41d394;
+  --yellow: #eec736;
+  --red: #ef4444;
+  --card-color: #182239;
+  --card-darker: #131b31;
+  --darker-card-bg: #0f1624d9;
+  --darker-orange: #514c2e;
+  --text-color: #7b8096;
+  --darker-color: #1a4047;
+  --dark-green: #1f464e;
+  --little-dark-green: #2fb079;
+  --blueish-green: #1f464e;
+  --progressbar-bg: #21242c;
+  --blackish-orange: #0e1115;
+  --greenish: #173f3d;
+}
+
+body {
+  background-color: var(--bg-color);
+  font-family: 'Helvetica', sans-serif;
+}
+
+.container {
+  max-width: 1400px;
+  padding: 1.5rem;
+}
+
+/* ======== WEBPAGE THEME =========== */
+.text-gradient {
+  display: inline-block;
+  background: linear-gradient(to right, var(--green), var(--yellow));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-base {
+  color: var(--text-color);
+}
+
+/* cards */
+.card {
+  border: 1px solid var(--darker-color);
+  background-color: var(--card-color);
+  border-radius: 10px;
+}
+
+.card-dark {
+  background-color: var(--card-darker);
+  border-radius: 10px;
+}
+
+.card-dark:hover {
+  background-color: #11192f;
+}
+
+.hover-glow:hover {
+  box-shadow: 0px 0px 50px #0da96569;
+}
+
+@supports not (box-shadow: 0px 0px 50px #0da96569) {
+  .hover-glow {
+    border: 1px solid rgba(255, 255, 255, 0.2); /* fallback for shadow */
+  }
+}
+
+/* indicators or bullet point */
+.indicator {
+  display: inline-block;
+  width: 8px;
+  min-width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--green);
+}
+
+.indicator-blinks {
+  animation: blinks 1.5s linear infinite;
+}
+
+@keyframes blinks {
+  50% {
+    background-color: #25875c;
+  }
+}
+
+.indicator-active {
+  background-color: var(--green);
+}
+
+.indicator-offline {
+  background-color: var(--yellow);
+}
+
+.indicator-away {
+  background-color: var(--red);
+}
+
+/* tags  */
+.tag {
+  display: inline;
+  width: fit-content;
+  border-radius: 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 3px 9px;
+  cursor: pointer;
+}
+
+.tag-darker-lighter-green {
+  background-color: var(--green);
+  color: black;
+}
+
+.tag-darker-lighter-green:hover {
+  background-color: var(--little-dark-green);
+}
+
+.tag-lighter-darker-green {
+  color: var(--green);
+  background-color: var(--greenish);
+}
+
+.tag-darker-orange {
+  color: var(--blackish-orange);
+  background-color: var(--darker-orange);
+}
+
+.tag-hover-green {
+  color: white;
+}
+
+.tag-hover-green:hover {
+  background-color: var(--green);
+}
+
+.tag-lighter-darker-orange {
+  color: var(--yellow);
+  background-color: var(--darker-orange);
+}
+
+/* progress bars */
+.progress-bar {
+  background-color: var(--progressbar-bg);
+  height: 16px;
+  width: 100%;
+  min-width: 96px;
+  display: block;
+  max-width: 400px;
+  border-radius: 20px;
+  position: relative;
+}
+
+.progress-73::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 73%;
+  background-color: var(--green);
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.progress-78::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 78%;
+  background-color: var(--green);
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.progress-92::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 92%;
+  background-color: var(--green);
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.progress-64::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 64%;
+  background-color: var(--green);
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.progress-45::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 45%;
+  background-color: var(--green);
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.progress-87::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 87%;
+  background-color: var(--green);
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.progress-43::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 43%;
+  background-color: var(--green);
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.progress-61::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 61%;
+  background-color: var(--green);
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+/* ===== Utility classes ===== */
+h1 {
+  font-size: 2.2rem;
+}
+
+button {
+  background: none;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  padding: 0.5rem 0.7rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--yellow);
+  color: black;
+}
+
+button:hover i {
+  color: black;
+}
+
+.pt-2 {
+  padding-top: 2rem;
+}
+
+.mb-15 {
+  margin-bottom: 1.5rem;
+}
+
+.mt-1 {
+  margin-top: 1rem;
+}
+
+.ml-05 {
+  margin-left: 0.5rem;
+}
+
+.p-2 {
+  padding: 2rem;
+}
+
+.p-15 {
+  padding: 1.5rem;
+}
+
+.p-1 {
+  padding: 1rem;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.justify-end {
+  justify-content: end;
+}
+
+.justify-space-between {
+  justify-content: space-between;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.gap-1 {
+  gap: 1em;
+}
+
+.gap-15 {
+  gap: 1.5em;
+}
+
+.gap-05 {
+  gap: 0.5em;
+}
+
+.gap-07 {
+  gap: 0.7em;
+}
+
+@supports not (gap: 1rem) {
+  .gap-05 > * + * {
+    margin-left: 0.5rem;
+    margin-top: 0.5rem;
+  }
+  .gap-07 > * + * {
+    margin-left: 0.7rem;
+    margin-top: 0.7rem;
+  }
+  .gap-1 > * + * {
+    margin-left: 1rem;
+    margin-top: 1rem;
+  }
+  .gap-15 > * + * {
+    margin-left: 1.5rem;
+    margin-top: 1.5rem;
+  }
+}
+
+.align-center {
+  align-items: center;
+}
+
+.align-end {
+  align-items: end;
+}
+
+.text-white {
+  color: white;
+}
+
+.text-green {
+  color: var(--green);
+}
+
+.w-100 {
+  width: 100%;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.font-size-normal {
+  font-size: 0.9rem;
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+/* ===== MAIN BODY  ===== */
+.lab-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(12, auto);
+  grid-template-rows: 320px repeat(3, auto);
+  grid-template-areas:
+    'ActiveE ActiveE ActiveE ActiveE ActiveE ActiveE ActiveE ActiveE Stats Stats Stats Stats'
+    'Ongoing Ongoing Ongoing Ongoing Ongoing Ongoing Ongoing Ongoing Team Team Team Team'
+    'Equipments Equipments Equipments Equipments Equipments Analytics Analytics Analytics Analytics  Analytics Analytics Analytics'
+    'Publications Publications Publications Publications Publications Publications Publications Publications Publications Publications Publications Publications';
+}
+
+/* ===== grid area assignment ========= */
+.active-experiment {
+  grid-area: ActiveE;
+  position: relative;
+}
+
+.ongoing-experiment {
+  grid-area: Ongoing;
+}
+
+.stats {
+  grid-area: Stats;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.team {
+  grid-area: Team;
+}
+
+.equipments {
+  grid-area: Equipments;
+}
+
+.analytics {
+  grid-area: Analytics;
+}
+
+.publications {
+  grid-area: Publications;
+}
+
+/* =========== ACTIVE EXPERIMENTS ============== */
+.active-experiment img {
+  height: 100%;
+  border-radius: 10px;
+}
+
+.experiment-details {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--darker-card-bg);
+  border-radius: 10px;
+  gap: 0.8em;
+}
+
+/* =========== STATUS SECTION ============== */
+.status-item {
+  display: flex;
+  gap: 0.2em;
+  font-size: 0.9rem;
+}
+
+.status-item i {
+  margin-right: 0.3em;
+}
+
+/* =========== STATS ============== */
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.stats .fa-lightbulb-o {
+  font-size: 1.2rem;
+}
+
+/* =========== RESEARCHERS ============== */
+.researcher-logo {
+  background-color: var(--blueish-green);
+  color: var(--green);
+  border-radius: 50%;
+  min-width: 48px;
+  font-weight: 600;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.researcher-details,
+.equipment-details,
+.experiment-title {
+  gap: 0.2rem;
+}
+
+/* =========== ANALYTICS ============== */
+.analytics .progress-bar {
+  width: 100%;
+  max-width: 100%;
+  height: 8px;
+}
+
+.analytic-label {
+  font-weight: 600;
+}
+
+/* =========== PUBLICATION ============== */
+.publication-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+/* =========== RESPONSIVENESS ============== */
+@media screen and (max-width: 995px) {
+  .lab-grid {
+    grid-template-columns: auto;
+    grid-template-rows: repeat(7, auto);
+    grid-template-areas:
+      'ActiveE'
+      'Stats'
+      'Ongoing'
+      'Team'
+      'Equipments'
+      'Analytics'
+      'Publications';
+  }
+}
+
+@media screen and (max-width: 775px) {
+  .publication-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .lab-grid {
+    grid-template-rows: 400px repeat(6, auto);
+  }
+
+  .text-base {
+    font-size: 0.9rem;
+  }
+
+  .font-size-normal {
+    font-size: 0.8rem;
+  }
+
+  .experiment-progress,
+  .experiment-info {
+    flex-direction: column;
+  }
+
+  .experiment-progress .d-flex {
+    flex-direction: row;
+    width: 100%;
+    gap: 0.3em;
+    justify-content: end;
+  }
+
+  .experiment-progress span {
+    font-size: 0.8rem;
+  }
+
+  .experiment-info {
+    gap: 1em;
+  }
+
+  .progress-bar {
+    height: 10px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+  h2 {
+    font-size: 1.4rem;
+  }
+  h3 {
+    font-size: 1.1rem;
+  }
+  h4 {
+    font-size: 0.9rem;
+  }
+
+  .equipment-name,
+  .researcher-name,
+  .experiment-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  .gap-15 {
+    gap: 1.2rem;
+  }
+
+  .p-15 {
+    padding: 1.3rem;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .tag {
+    font-size: 0.7rem;
+  }
+
+  .equipment-item > .d-flex {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .equipments > .d-flex {
+    gap: 1.7rem;
+  }
+
+  .publications button {
+    margin-left: auto;
+  }
+}
