@@ -48,6 +48,9 @@
     />
   </head>
   <body>
+    <div class="loader" id="loader">
+      <div></div>
+    </div>
     <div class="container">
       <header>
         <!-- HEADER-->
@@ -69,7 +72,7 @@
               Real-time monitoring of quantum state manipulation and circuit
               optimization
             </p>
-            <div class="d-flex gap-1 flex-wrap">
+            <div class="d-flex gap-05 flex-wrap">
               <div class="status-item text-base">
                 <i class="fa fa-signal text-green"></i>
                 <span class="status-title">Status:</span>
@@ -451,7 +454,7 @@
         </section>
         <!-- ========= PUBLICATIONS ========= -->
         <section class="publications card p-15">
-          <div class="d-flex justify-space-between mb-15 flex-wrap">
+          <div class="d-flex justify-space-between mb-15">
             <h3 class="text-white">Recent Publications</h3>
             <button class="text-white">
               <span>View All</span>
@@ -523,5 +526,10 @@
         </section>
       </main>
     </div>
+    <script>
+      window.addEventListener('load', function () {
+        document.getElementById('loader').style.display = 'none';
+      });
+    </script>
   </body>
 </html>
