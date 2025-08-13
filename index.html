@@ -84,7 +84,7 @@
                 <span class="status-value">73%</span>
               </div>
             </div>
-            <div class="progress-bar progress-73"></div>
+            <div class="progress-bar" data-progress="73"></div>
           </div>
         </section>
         <!-- ========= STATS ========= -->
@@ -164,7 +164,7 @@
                       >Complete</span
                     >
                   </div>
-                  <div class="progress-bar progress-87"></div>
+                  <div class="progress-bar" data-progress="87"></div>
                 </div>
               </div>
             </div>
@@ -198,7 +198,7 @@
                       >Complete</span
                     >
                   </div>
-                  <div class="progress-bar progress-43"></div>
+                  <div class="progress-bar" data-progress="43"></div>
                 </div>
               </div>
             </div>
@@ -232,7 +232,7 @@
                       >Complete</span
                     >
                   </div>
-                  <div class="progress-bar progress-61"></div>
+                  <div class="progress-bar" data-progress="61"></div>
                 </div>
               </div>
             </div>
@@ -409,7 +409,7 @@
                 >
               </div>
               <!-- a percentage bar showing analytics-->
-              <div class="progress-bar progress-78"></div>
+              <div class="progress-bar" data-progress="78"></div>
             </div>
             <div class="card-dark p-1 d-flex flex-column gap-05">
               <div class="d-flex justify-space-between">
@@ -422,7 +422,7 @@
                 >
               </div>
               <!-- a percentage bar showing analytics-->
-              <div class="progress-bar progress-64"></div>
+              <div class="progress-bar" data-progress="64"></div>
             </div>
             <div class="card-dark p-1 d-flex flex-column gap-05">
               <div class="d-flex justify-space-between">
@@ -435,7 +435,7 @@
                 >
               </div>
               <!-- a percentage bar showing analytics-->
-              <div class="progress-bar progress-92"></div>
+              <div class="progress-bar" data-progress="92"></div>
             </div>
             <div class="card-dark p-1 d-flex flex-column gap-05">
               <div class="d-flex justify-space-between">
@@ -448,7 +448,7 @@
                 >
               </div>
               <!-- a percentage bar showing analytics-->
-              <div class="progress-bar progress-45"></div>
+              <div class="progress-bar" data-progress="45"></div>
             </div>
           </div>
         </section>
@@ -530,6 +530,24 @@
       window.addEventListener('load', function () {
         document.getElementById('loader').style.display = 'none';
       });
+      const bars = document.querySelectorAll('.progress-bar');
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.style.setProperty(
+                '--progress',
+                entry.target.dataset.progress + '%',
+              );
+              observer.unobserve(entry.target); // Animate only once
+            }
+          });
+        },
+        { threshold: 0.3 },
+      );
+
+      bars.forEach((bar) => observer.observe(bar));
     </script>
   </body>
 </html>

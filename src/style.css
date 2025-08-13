@@ -159,124 +159,29 @@ body {
   background-color: var(--darker-orange);
 }
 
-/* progress bars */
 .progress-bar {
   background-color: var(--progressbar-bg);
   height: 16px;
   width: 100%;
   min-width: 96px;
-  display: block;
   max-width: 400px;
   border-radius: 20px;
   position: relative;
+  overflow: hidden;
+}
+
+.progress-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: var(--progress, 0%);
+  background-color: var(--green);
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  transition: width 1s ease;
   cursor: pointer;
-}
-
-.progress-73::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  height: 100%;
-  width: 73%;
-  background-color: var(--green);
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
-  &:hover {
-    background-color: var(--little-dark-green);
-  }
-}
-
-.progress-78::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  height: 100%;
-  width: 78%;
-  background-color: var(--green);
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
-}
-
-.progress-92::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  height: 100%;
-  width: 92%;
-  background-color: var(--green);
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
-}
-
-.progress-64::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  height: 100%;
-  width: 64%;
-  background-color: var(--green);
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
-}
-
-.progress-45::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  height: 100%;
-  width: 45%;
-  background-color: var(--green);
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
-}
-
-.progress-87::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  height: 100%;
-  width: 87%;
-  background-color: var(--green);
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
-}
-
-.progress-43::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  height: 100%;
-  width: 43%;
-  background-color: var(--green);
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
-}
-
-.progress-61::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  height: 100%;
-  width: 61%;
-  background-color: var(--green);
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
 }
 
 header p {
